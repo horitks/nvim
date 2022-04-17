@@ -78,6 +78,8 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
+
+Plug 'github/copilot.vim'
 call plug#end()
 
 " ale
