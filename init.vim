@@ -46,7 +46,11 @@ if has("autocmd")
   augroup END
 endif
 
-runtime! autoload/init/*.vim
+" ripgrep (rename-to:rg)
+if executable("rg")
+    let &grepprg = 'rg --vimgrep --hidden > /dev/null'
+    set grepformat=%f:%l:%c:%m
+endif
 
 " PLUGIN SETTINGS
 call plug#begin('~/.config/nvim/plugged')
@@ -64,6 +68,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
@@ -95,6 +100,24 @@ let NERDTreeShowHidden = 1
 " NERDTree git
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusShowIgnored = 1
+
+" vim fzf ripgrep
+set runtimepath+=~/.zplug/bin/fzf
+
+function! FZGrep(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call FZGrep(<q-args>, <bang>0)
+
+nnoremap <leader>,p :GFiles<CR>
+nnoremap <leader>,f :Files<CR>
+nnoremap <leader>,r :RG<CR>
+nnoremap <leader>,c :Commits<CR>
 
 " coc.nvim
 function! s:check_back_space() abort
