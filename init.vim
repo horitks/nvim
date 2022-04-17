@@ -59,6 +59,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -78,6 +79,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 call plug#end()
+
+" ale
+let g:ale_disable_lsp = 1
+let g:ale_lint_on_text_changed = 1
 
 " molokai
 syntax enable
@@ -132,6 +137,9 @@ inoremap <silent><expr> <Tab>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+nmap gd <Plug>(coc-definition)
+nmap gr <Plug>(coc-references)
 
 " Airline SETTINGS
 let g:airline_powerline_fonts = 1
