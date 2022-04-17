@@ -2,7 +2,7 @@
 ## clone repo
 ```
 cd ~/.config
-git clone git@github.com:horitks/neovim.git
+git clone git@github.com:horitks/nvim.git
 ```
 
 ## neovim
