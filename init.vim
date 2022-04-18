@@ -33,8 +33,8 @@ noremap ; :
 
 let mapleader = "\<Space>"
 " nerd風に合わせる
-nnoremap <Leader>s :<C-u>vs %<CR>
-nnoremap <Leader>i :<C-u>sp %<CR>
+nnoremap <Leader>v :<C-u>vs %<CR>
+nnoremap <Leader>s :<C-u>sp %<CR>
 
 nnoremap <Leader>t :<C-u>tabnew %<CR>
 nnoremap <Leader>q :<C-u>q<CR>
