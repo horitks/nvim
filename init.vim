@@ -21,6 +21,7 @@ set clipboard+=unnamed
 
 set list
 set listchars=tab:»-,trail:-
+:match Ignore / /
 
 set visualbell
 set t_vb=
@@ -99,6 +100,7 @@ hi Identifier ctermbg=NONE
 
 hi Comment ctermfg=102
 hi Visual  ctermbg=240
+hi Ignore ctermbg=235
 
 " NERDTree SETTINGS
 nnoremap <leader>n :NERDTreeFocus<CR>
