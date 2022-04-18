@@ -38,6 +38,7 @@ nnoremap <Leader>s :<C-u>sp %<CR>
 
 nnoremap <Leader>t :<C-u>tabnew %<CR>
 nnoremap <Leader>q :<C-u>q<CR>
+map <C-b> :<C-u> #<CR>
 
 map <C-l> gt
 map <C-h> gT
@@ -108,11 +109,12 @@ hi Special ctermbg=NONE
 hi Identifier ctermbg=NONE
 
 hi Comment ctermfg=102
-hi Visual  ctermbg=240
-hi Ignore ctermbg=235
+hi Visual  ctermbg=242
+hi Ignore ctermbg=237
 
 " hl-matchit
 let g:hl_matchit_enable_on_vim_startup = 1
+let g:hl_matchit_speed_level = 1
 
 " NERDTree SETTINGS
 nnoremap <leader>n :NERDTreeFocus<CR>
