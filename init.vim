@@ -32,9 +32,16 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 noremap ; :
 
 let mapleader = "\<Space>"
+" nerd風に合わせる
+nnoremap <Leader>s :<C-u>vs %<CR>
+nnoremap <Leader>i :<C-u>sp %<CR>
+
+nnoremap <Leader>t :<C-u>tabnew %<CR>
+nnoremap <Leader>q :<C-u>q<CR>
 
 map <C-l> gt
 map <C-h> gT
+nnoremap <ESC> :nohl<CR>
 
 " 編集箇所のカーソルを記憶
 if has("autocmd")
@@ -58,6 +65,7 @@ endif
 " PLUGIN SETTINGS
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tomasr/molokai'
+Plug 'vimtaku/hl_matchit.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
@@ -81,6 +89,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-rails'
 
 Plug 'github/copilot.vim'
 call plug#end()
@@ -101,6 +110,9 @@ hi Identifier ctermbg=NONE
 hi Comment ctermfg=102
 hi Visual  ctermbg=240
 hi Ignore ctermbg=235
+
+" hl-matchit
+let g:hl_matchit_enable_on_vim_startup = 1
 
 " NERDTree SETTINGS
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -128,10 +140,10 @@ endfunction
 
 command! -nargs=* -bang RG call FZGrep(<q-args>, <bang>0)
 
-nnoremap <leader>,p :GFiles<CR>
-nnoremap <leader>,f :Files<CR>
-nnoremap <leader>,r :RG<CR>
-nnoremap <leader>,c :Commits<CR>
+nnoremap <leader>p :GFiles<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>r :RG<CR>
+nnoremap <leader>c :Commits<CR>
 
 " coc.nvim
 function! s:check_back_space() abort

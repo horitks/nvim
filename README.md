@@ -1,4 +1,4 @@
-# Usage 
+ Usage 
 ## clone repo
 ```
 cd ~/.config
