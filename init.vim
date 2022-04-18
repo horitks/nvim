@@ -16,6 +16,8 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
+set virtualedit=block
+set clipboard+=unnamed
 
 set list
 set listchars=tab:»-,trail:-
@@ -94,6 +96,9 @@ hi LineNr ctermbg=NONE
 hi VertSplit ctermbg=NONE
 hi Special ctermbg=NONE
 hi Identifier ctermbg=NONE
+
+hi Comment ctermfg=102
+hi Visual  ctermbg=240
 
 " NERDTree SETTINGS
 nnoremap <leader>n :NERDTreeFocus<CR>
