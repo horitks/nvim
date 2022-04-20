@@ -21,7 +21,6 @@ set clipboard+=unnamed
 
 set list
 set listchars=tab:»-,trail:-
-:match Ignore / /
 
 set visualbell
 set t_vb=
@@ -32,13 +31,20 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 noremap ; :
 
 let mapleader = "\<Space>"
-" nerd風に合わせる
 nnoremap <Leader>v :<C-u>vs %<CR>
 nnoremap <Leader>s :<C-u>sp %<CR>
-
 nnoremap <Leader>t :<C-u>tabnew %<CR>
-nnoremap <Leader>q :<C-u>q<CR>
-map <C-b> :<C-u> #<CR>
+map <Leader>q :q<CR>
+nmap <Leader>w [window]
+nnoremap [window]h <C-w>h
+nnoremap [window]j <C-w>j
+nnoremap [window]k <C-w>k
+nnoremap [window]l <C-w>l
+nnoremap [window]w <C-w>w
+nnoremap <C-w> :w<CR>
+nnoremap <C-w>d :w !diff % -<CR>
+nnoremap <C-b> <C-u>#<CR>
+nmap cp :let @* = expand("%:p")<CR>
 
 map <C-l> gt
 map <C-h> gT
@@ -66,6 +72,7 @@ endif
 " PLUGIN SETTINGS
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tomasr/molokai'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vimtaku/hl_matchit.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -98,6 +105,11 @@ call plug#end()
 " ale
 let g:ale_disable_lsp = 1
 let g:ale_lint_on_text_changed = 1
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\}
+let g:ale_linters_explicit = 1 
+let g:airline#extensions#ale#enabled = 1
 
 " molokai
 syntax enable
@@ -111,6 +123,13 @@ hi Identifier ctermbg=NONE
 hi Comment ctermfg=102
 hi Visual  ctermbg=242
 hi Ignore ctermbg=237
+
+" vim-indent-guides
+" set tabstop=2 shiftwidth=2 expandtab
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=239
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=240
 
 " hl-matchit
 let g:hl_matchit_enable_on_vim_startup = 1
