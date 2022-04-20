@@ -45,6 +45,7 @@ nnoremap <C-w> :w<CR>
 nnoremap <C-w>d :w !diff % -<CR>
 nnoremap <C-b> <C-u>#<CR>
 nmap cp :let @* = expand("%:p")<CR>
+nnoremap <Leader>q :<C-u>q<CR>
 
 map <C-l> gt
 map <C-h> gT
@@ -108,7 +109,7 @@ let g:ale_lint_on_text_changed = 1
 let g:ale_linters = {
 \   'ruby': ['rubocop'],
 \}
-let g:ale_linters_explicit = 1 
+let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enabled = 1
 
 " molokai
@@ -176,6 +177,8 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+inoremap <silent><expr> <C-b> coc#refresh()
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
