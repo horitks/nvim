@@ -145,6 +145,10 @@ nmap <C-p> <Plug>AirlineSelectPrevTab
 nmap <C-n> <Plug>AirlineSelectNextTab
 let NERDTreeShowHidden = 1
 
+" 終了時にmks! NERDTreeはエラーになるので事前に閉じる
+autocmd VimLeave * NERDTreeClose
+autocmd VimLeave * mks!
+
 " NERDTree git
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusShowIgnored = 1
@@ -166,6 +170,15 @@ nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :RG<CR>
 nnoremap <leader>c :Commits<CR>
+
+" FzfでGitブランチの変更ファイルを検索
+command! -bang FzfGitBranchFiles
+  \ call fzf#run({'source':
+  \   "git diff --name-only $(git show-branch --sha1-name $(git symbolic-ref --short refs/remotes/origin/HEAD) $(git rev-parse --abbrev-ref HEAD) | tail -1 | awk -F'[]~^[]' '{print $2}')",
+  \   'sink': 'e',
+  \   'options': '-m --prompt "GitBranchFiles>" --preview "bat --color=always  {}"',
+  \   'window': { 'width': 0.92, 'height': 0.7, 'yoffset': 1 }
+  \   })
 
 " coc.nvim
 function! s:check_back_space() abort
