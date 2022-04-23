@@ -169,7 +169,8 @@ endfunction
 
 command! -nargs=* -bang RG call FZGrep(<q-args>, <bang>0)
 
-nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>p :GFiles<CR>
+nnoremap <leader>g :GFiles?<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :RG<CR>
 nnoremap <leader>c :Commits<CR>
