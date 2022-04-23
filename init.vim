@@ -72,7 +72,7 @@ endif
 
 " PLUGIN SETTINGS
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tomasr/molokai'
+Plug 'cocopon/iceberg.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vimtaku/hl_matchit.vim'
 Plug 'vim-airline/vim-airline'
@@ -112,18 +112,18 @@ let g:ale_linters = {
 let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enabled = 1
 
-" molokai
+" color
 syntax enable
-colorscheme molokai
-hi Normal ctermbg=NONE
-hi LineNr ctermbg=NONE
-hi VertSplit ctermbg=NONE
-hi Special ctermbg=NONE
-hi Identifier ctermbg=NONE
+colorscheme iceberg
+" hi Normal ctermbg=NONE
+" hi LineNr ctermbg=NONE
+" hi VertSplit ctermbg=NONE
+" hi Special ctermbg=NONE
+" hi Identifier ctermbg=NONE
 
-hi Comment ctermfg=102
-hi Visual  ctermbg=242
-hi Ignore ctermbg=237
+" hi Comment ctermfg=102
+" hi Visual  ctermbg=242
+" hi Ignore ctermbg=237
 
 " vim-indent-guides
 " set tabstop=2 shiftwidth=2 expandtab
