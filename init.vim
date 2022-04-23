@@ -51,6 +51,9 @@ map <C-l> gt
 map <C-h> gT
 nnoremap <ESC> :nohl<CR>
 
+" vim write diff
+command Wdiff :w !diff % -
+
 " 編集箇所のカーソルを記憶
 if has("autocmd")
   augroup redhat
