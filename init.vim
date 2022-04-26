@@ -42,8 +42,6 @@ nnoremap [window]j <C-w>j
 nnoremap [window]k <C-w>k
 nnoremap [window]l <C-w>l
 nnoremap [window]w <C-w>w
-nnoremap <C-w> :w<CR>
-nnoremap <C-w>d :w !diff % -<CR>
 nnoremap <C-b> <C-u>#<CR>
 nmap cp :let @* = expand("%:p")<CR>
 nnoremap <Leader>q :<C-u>q<CR>
@@ -103,6 +101,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
+Plug 'todesking/ruby_hl_lvar.vim'
 
 Plug 'github/copilot.vim'
 call plug#end()
