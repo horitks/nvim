@@ -51,3 +51,11 @@ LSP examples
 ```
 :CocInstall coc-sh coc-html coc-css coc-json coc-tsserver coc-vetur coc-pyright coc-go coc-solargraph coc-rust-analyzer
 ```
+
+
+## gem
+
+```
+gem install rubocop
+gem install solargraph
+```
