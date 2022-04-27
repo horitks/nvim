@@ -23,6 +23,9 @@ set list
 set listchars=tab:»-,trail:-
 set cursorline
 
+" コメント行からoする時はコメント自動挿入しない
+autocmd FileType * setlocal formatoptions-=o
+
 set visualbell
 set t_vb=
 
