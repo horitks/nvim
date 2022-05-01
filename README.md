@@ -58,4 +58,5 @@ LSP examples
 ```
 gem install rubocop
 gem install solargraph
+gem install neovim
 ```
