@@ -101,7 +101,6 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
 Plug 'todesking/ruby_hl_lvar.vim'
