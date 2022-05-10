@@ -89,6 +89,7 @@ Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'slim-template/vim-slim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
