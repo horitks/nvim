@@ -79,7 +79,6 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'cocopon/iceberg.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vimtaku/hl_matchit.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
@@ -137,10 +136,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
-
-" hl-matchit
-let g:hl_matchit_enable_on_vim_startup = 1
-let g:hl_matchit_speed_level = 1
 
 " NERDTree SETTINGS
 nnoremap <leader>n :NERDTreeFocus<CR>
