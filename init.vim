@@ -187,7 +187,8 @@ let g:coc_global_extensions = [
       \'coc-pyright', 
       \'coc-go',
       \'coc-solargraph', 
-      \'coc-rust-analyzer'
+      \'coc-rust-analyzer',
+      \'coc-phpls'
       \]
 
 function! s:check_back_space() abort
