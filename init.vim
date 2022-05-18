@@ -23,6 +23,8 @@ set list
 set listchars=tab:»-,trail:-
 set cursorline
 
+set re=1
+
 " コメント行からoする時はコメント自動挿入しない
 autocmd FileType * setlocal formatoptions-=o
 
@@ -174,6 +176,20 @@ nnoremap <leader>r :RG<CR>
 nnoremap <leader>c :Commits<CR>
 
 " coc.nvim
+let g:coc_global_extensions = [
+      \'coc-solargraph',
+      \'coc-sh',
+      \'coc-html',
+      \'coc-css',
+      \'coc-json',
+      \'coc-tsserver',
+      \'coc-vetur',
+      \'coc-pyright', 
+      \'coc-go',
+      \'coc-solargraph', 
+      \'coc-rust-analyzer'
+      \]
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
@@ -183,8 +199,6 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-
-inoremap <silent><expr> <C-b> coc#refresh()
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
