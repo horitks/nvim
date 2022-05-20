@@ -108,6 +108,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
 Plug 'todesking/ruby_hl_lvar.vim'
+Plug 'mattn/vim-goimports'
 
 Plug 'github/copilot.vim'
 call plug#end()
@@ -115,6 +116,9 @@ call plug#end()
 " ale
 let g:ale_disable_lsp = 1
 let g:ale_lint_on_text_changed = 1
+
+" goimports
+let g:goimports = 1
 
 " color
 syntax enable
