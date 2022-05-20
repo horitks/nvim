@@ -6,6 +6,7 @@ set ruler
 set history=1000
 set encoding=utf8
 set spell spelllang=en_us,cjk
+set spellfile=~/.vim/spell/en.utf-8.add
 
 set wrapscan
 set incsearch
@@ -184,7 +185,8 @@ let g:coc_global_extensions = [
       \'coc-go',
       \'coc-solargraph', 
       \'coc-rust-analyzer',
-      \'coc-phpls'
+      \'coc-phpls',
+      \'coc-angular'
       \]
 
 function! s:check_back_space() abort
