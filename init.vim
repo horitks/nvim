@@ -5,6 +5,7 @@ set wildmenu
 set ruler
 set history=1000
 set encoding=utf8
+set spell spelllang=en_us,cjk
 
 set wrapscan
 set incsearch
@@ -113,11 +114,6 @@ call plug#end()
 " ale
 let g:ale_disable_lsp = 1
 let g:ale_lint_on_text_changed = 1
-let g:ale_linters = {
-\   'ruby': ['rubocop'],
-\}
-let g:ale_linters_explicit = 1
-let g:airline#extensions#ale#enabled = 1
 
 " color
 syntax enable
