@@ -206,7 +206,7 @@ nmap gr <Plug>(coc-references)
 " Airline SETTINGS
 let g:airline_powerline_fonts = 1
 
-" Esc SETTINGS
+" ESC SETTINGS
 inoremap jk <Esc>
 inoremap jj <Esc>
 
