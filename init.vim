@@ -30,6 +30,13 @@ set re=1
 " コメント行からoする時はコメント自動挿入しない
 autocmd FileType * setlocal formatoptions-=o
 
+" ESC SETTINGS
+inoremap jk <Esc>
+inoremap jj <Esc>
+
+"/// SPLIT BORDER SETTINGS
+hi VertSplit cterm=none
+
 set visualbell
 set t_vb=
 
@@ -212,9 +219,3 @@ nmap gr <Plug>(coc-references)
 " Airline SETTINGS
 let g:airline_powerline_fonts = 1
 
-" ESC SETTINGS
-inoremap jk <Esc>
-inoremap jj <Esc>
-
-"/// SPLIT BORDER SETTINGS
-hi VertSplit cterm=none
