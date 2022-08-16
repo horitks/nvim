@@ -88,6 +88,7 @@ endif
 
 " PLUGIN SETTINGS
 call plug#begin('~/.config/nvim/plugged')
+Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
@@ -127,21 +128,12 @@ let g:ale_lint_on_text_changed = 1
 " goimports
 let g:goimports = 1
 
-" color
+" select color
 syntax enable
-colorscheme iceberg
-" hi Normal ctermbg=NONE
-" hi LineNr ctermbg=NONE
-" hi VertSplit ctermbg=NONE
-" hi Special ctermbg=NONE
-" hi Identifier ctermbg=NONE
 
-" hi Comment ctermfg=102
-" hi Visual  ctermbg=242
-" hi Ignore ctermbg=237
+colorscheme nord
+" colorscheme iceberg
 
-" vim-indent-guides
-" set tabstop=2 shiftwidth=2 expandtab
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
