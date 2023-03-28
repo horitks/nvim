@@ -118,7 +118,6 @@ Plug 'tpope/vim-rails'
 Plug 'todesking/ruby_hl_lvar.vim'
 Plug 'mattn/vim-goimports'
 
-Plug 'github/copilot.vim'
 call plug#end()
 
 " ale
