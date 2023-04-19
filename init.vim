@@ -115,7 +115,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
-Plug 'todesking/ruby_hl_lvar.vim'
 Plug 'mattn/vim-goimports'
 
 call plug#end()
