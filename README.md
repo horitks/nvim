@@ -46,6 +46,11 @@ cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complet
 brew install fzf
 ```
 
+## rg
+```
+brew install ripgrep
+```
+
 ## gem
 
 ```
