@@ -88,8 +88,10 @@ endif
 
 " PLUGIN SETTINGS
 call plug#begin('~/.config/nvim/plugged')
-Plug 'arcticicestudio/nord-vim'
-Plug 'cocopon/iceberg.vim'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'cocopon/iceberg.vim'
+Plug 'projekt0n/github-nvim-theme'
+
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -131,7 +133,7 @@ require('copilot').setup({
 })
 EOF
 
-"" CopilotChat
+" CopilotChat
 lua << EOF
 require("CopilotChat").setup {
   debug = true, -- Enable debugging
@@ -148,13 +150,16 @@ let g:goimports = 1
 " select color
 syntax enable
 
-colorscheme nord
+" colorscheme nord
 " colorscheme iceberg
+colorscheme github_dark_dimmed
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3a3a3a ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#4e4e4e ctermbg=237
 
 " NERDTree SETTINGS
 nnoremap <leader>n :NERDTreeFocus<CR>
