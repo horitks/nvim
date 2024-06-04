@@ -117,7 +117,26 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
 Plug 'mattn/vim-goimports'
 
+Plug 'github/copilot.vim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 call plug#end()
+
+" Copilot
+lua << EOF
+require('copilot').setup({
+    suggestion = { enabled = true },
+    panel = { enabled = true },
+})
+EOF
+
+"" CopilotChat
+lua << EOF
+require("CopilotChat").setup {
+  debug = true, -- Enable debugging
+}
+EOF
 
 " ale
 let g:ale_disable_lsp = 1
