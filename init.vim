@@ -138,6 +138,15 @@ lua << EOF
 require("CopilotChat").setup {
   debug = true, -- Enable debugging
 }
+
+function CopilotChatBuffer()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end
+
+vim.api.nvim_set_keymap("n", "<leader>cc", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
 EOF
 
 " ale
@@ -233,3 +242,6 @@ nmap gr <Plug>(coc-references)
 " Airline SETTINGS
 let g:airline_powerline_fonts = 1
 
+" asdf path
+let $PATH = expand('~/.asdf/shims:') . $PATH
+let $PATH = expand('~/.asdf/bin:') . $PATH
